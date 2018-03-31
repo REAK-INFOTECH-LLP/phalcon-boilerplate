@@ -1,0 +1,15 @@
+{
+    "name": "GenericPhalcon",
+    "description": "Generic Phalcon Boilerplate App",
+    "require-dev": {
+        "phpunit/phpunit": "^6.5",
+        "phalcon/incubator": "^3.0"
+    },
+    "authors": [
+        {
+            "name": "Ashish Saxena",
+            "email": "ashish@reak.in"
+        }
+    ],
+    "minimum-stability": "stable"
+}
