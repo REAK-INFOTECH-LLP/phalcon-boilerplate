@@ -20,7 +20,7 @@ class ControllerBase extends Controller
                 "utility/*",
             ),
             "guest"  =>  array(
-                "index/index",
+                "index/*",
                 "utility/forbidden",
                 "utility/notfound",
             )

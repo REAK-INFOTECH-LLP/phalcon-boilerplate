@@ -24,7 +24,7 @@ return new \Phalcon\Config([
         'baseUri'        => '/app/',
     ],
     'metadata'  =>  [
-        'appUrl'    =>  'http://development.reak.in',
+        'appUrl'    =>  'http://localhost/GIT/phalcon-boilerplate/app/',
         'fileUploadPath'    =>  '/var/www/html/public/upload'
     ]
 ]);

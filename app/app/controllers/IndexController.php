@@ -18,5 +18,11 @@ class IndexController extends ControllerBase
         return "ThisWorks";
     }
 
+    public function integrationtestAction(){
+        $this->view->disable();
+        $data = $this->request->getPost("data");
+        echo $data+10;
+    }
+
 }
 

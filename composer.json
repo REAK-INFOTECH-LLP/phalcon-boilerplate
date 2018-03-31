@@ -3,7 +3,8 @@
     "description": "Generic Phalcon Boilerplate App",
     "require-dev": {
         "phpunit/phpunit": "^6.5",
-        "phalcon/incubator": "^3.0"
+        "phalcon/incubator": "^3.0",
+        "guzzlehttp/guzzle": "^6.1"
     },
     "authors": [
         {

@@ -21,9 +21,23 @@ abstract class UnitTestCase extends PhalconTestCase
 
         // Get any DI components here. If you have a config, be sure to pass it to the parent
 
-        $this->setDi($di);
+        $di->setShared('config', function () {
+            $config_ini = parse_ini_file(__DIR__ . "/../app/config/system.ini");
+            if($config_ini["environment"] == "production"){
+                return include __DIR__ . "/../app/config/config-production.php";
+            }
+            else {
+                return include __DIR__ . "/../app/config/config.php";
+            }
+        });
 
+        $this->setDi($di);
+        
         $this->_loaded = true;
+        $url = $this->di->get("config")->metadata->appUrl;
+        $this->guzzle = new GuzzleHttp\Client([
+            'base_uri' => $url
+        ]);
     }
 
     /**
