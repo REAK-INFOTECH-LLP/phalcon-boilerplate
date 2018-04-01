@@ -1,5 +1,3 @@
-    REAK Phalcon-Bootstrap Template 
-
 ![REAK-logo](http://reak.in/reak_logo_small.png)
 
 Phalcon Boilerplate Project
