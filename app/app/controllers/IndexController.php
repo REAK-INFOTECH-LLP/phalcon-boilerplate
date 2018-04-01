@@ -14,15 +14,5 @@ class IndexController extends ControllerBase
         echo "Guest shouldn't be able to access this";
     }
 
-    public function unitTest(){
-        return "ThisWorks";
-    }
-
-    public function integrationtestAction(){
-        $this->view->disable();
-        $data = $this->request->getPost("data");
-        echo $data+10;
-    }
-
 }
 

@@ -12,5 +12,8 @@
             "email": "ashish@reak.in"
         }
     ],
-    "minimum-stability": "stable"
+    "minimum-stability": "stable",
+    "require": {
+        "rivsen/hello-world": "^0.1.0"
+    }
 }

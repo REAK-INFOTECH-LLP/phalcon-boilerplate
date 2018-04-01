@@ -1,17 +1,17 @@
 <?php
 
-namespace Index;
+namespace TestController;
 
 /**
  * Class UnitTest
  */
-class UnitTest extends \UnitTestCase {
+class TestControllerUnitTest extends \UnitTestCase {
     /*
         Simple Unit Test to Test Controller Logic
         Functions should be isolated from DB / Request, to have this working properly.
     */
     public function testsunittestfunctionTestCase() {
-        $result = new \IndexController;
+        $result = new \TestController;
         $result = $result->unitTest();
         $this->assertEquals(
             $result,
@@ -25,9 +25,11 @@ class UnitTest extends \UnitTestCase {
         compares the output with the desired output
     */
     public function testsintegrationtestTestCase() {
-        $response = $this->guzzle->post('index/integrationTest', array(), array(
-            'data'  =>  '50',
-        ));
+        $response = $this->guzzle->post('test/integrationtest', [
+            'form_params'  =>  [
+                'data'  => '50',
+            ]
+        ]);
 
         $this->assertEquals(
             $response->getBody()->getContents(),
