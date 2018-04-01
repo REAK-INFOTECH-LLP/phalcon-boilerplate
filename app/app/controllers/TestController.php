@@ -1,6 +1,6 @@
 <?php
 
-class TestController extends \Phalcon\Mvc\Controller
+class TestController extends ControllerBase
 {
 
     public function unitTest(){
@@ -13,17 +13,15 @@ class TestController extends \Phalcon\Mvc\Controller
         echo $data+10;
     }
 
-    public function integrationtestwithjsonAction() {
-        $this->view->disable();
-        $jsonData = $this->request->getPost("json");
-        $jsonData = json_decode($jsonData);
-        print_r($jsonData);
-    }
-
     public function testcomposerAction() {
         $this->view->disable();
         $hello = new Rivsen\Demo\Hello();
         echo $hello->hello();
+    }
+
+    public function testAction(){
+        $this->view->disable();
+        print_r($this->config->metadata->appUrl);
     }
 
 }

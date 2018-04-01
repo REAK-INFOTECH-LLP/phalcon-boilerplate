@@ -5,6 +5,9 @@ use Phalcon\Mvc\Dispatcher;
 
 class ControllerBase extends Controller
 {
+    public function initialize(){
+        $this->view->appUrl = $this->config->metadata->appUrl;
+    }
     
     public function beforeExecuteRoute(Dispatcher $dispatcher) {
         // Executed before every found action
@@ -18,11 +21,13 @@ class ControllerBase extends Controller
             "admin" =>  array(
                 "index/*",
                 "utility/*",
+                "test/*",
             ),
             "guest"  =>  array(
-                "index/*",
+                "index/index",
                 "utility/forbidden",
                 "utility/notfound",
+                "test/*",
             )
         );
     }
