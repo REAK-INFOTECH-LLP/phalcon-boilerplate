@@ -22,9 +22,11 @@ class ControllerBase extends Controller
                 "index/*",
                 "utility/*",
                 "test/*",
+                "authorization/*",
             ),
             "guest"  =>  array(
                 "index/index",
+                "authorization/*",
                 "utility/forbidden",
                 "utility/notfound",
                 "test/*",
