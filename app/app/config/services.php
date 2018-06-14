@@ -12,6 +12,8 @@ use Phalcon\Mvc\Dispatcher as MvcDispatcher;
 use Phalcon\Events\Event;
 use Phalcon\Events\Manager as EventsManager;
 use Phalcon\Mvc\Dispatcher\Exception as DispatchException;
+use Phalcon\Logger;
+use Phalcon\Logger\Adapter\File as FileAdapter;
 
 /**
  * Shared configuration service
@@ -150,3 +152,10 @@ $di->setShared(
         return $dispatcher;
     }
 );
+
+$di->setShared('logger',function(){
+    $config = $this->getConfig();
+    $logger = new FileAdapter($config->application->appDir.'logs/developer.log');
+
+    return $logger;
+});
