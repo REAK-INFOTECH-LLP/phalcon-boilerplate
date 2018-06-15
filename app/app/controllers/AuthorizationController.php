@@ -71,7 +71,25 @@ class AuthorizationController extends \Phalcon\Mvc\Controller
     }
 
     public function registerAction(){
-
+        if($this->request->isPost()){
+            try{
+                $user = new Users;
+                if($user->create($this->request->getPost())){
+                    $this->flash->success("User has been created successfully, Please login.");
+                    $this->dispatcher->forward([
+                        "controller"    =>  "authorization",
+                        "action" =>  "login"
+                    ]);
+                }
+                else{
+                    $this->flash->error("User cannot be created, Please try again");
+                    $this->logger->error("[LOGIN] Register Error, Query didn't complete successfully");
+                }
+            }
+            catch (\Exception $e){
+                $this->logger->critical('[LOGIN] Register Exception - '.$e);
+            }
+        }
     }
 
     public function forgotPasswordAction(){
