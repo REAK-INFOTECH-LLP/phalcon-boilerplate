@@ -14,5 +14,10 @@ class UtilityController extends ControllerBase {
 
     }
 
+    public function sendEmail($toEmail,$toName,$subject,$body){
+        // Send Email
+        return true;
+    }
+
 }
 
