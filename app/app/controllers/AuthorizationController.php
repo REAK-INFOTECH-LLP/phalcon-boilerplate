@@ -62,7 +62,7 @@ class AuthorizationController extends \Phalcon\Mvc\Controller
                     2   =>  $checkTimestamp
                 ]
             ]);
-            return ($checkLogin<2)?true:false;
+            return ($checkLogin<25)?true:false;
         }
         catch(\Exception $e){
             $this->logger->critical('[LOGIN] Check Login Failure Exception - '.$e);
@@ -80,11 +80,6 @@ class AuthorizationController extends \Phalcon\Mvc\Controller
 
     public function logoutAction(){
         $this->session->destroy();
-    }
-
-    public function testAction(){
-        $this->view->disable();
-        var_dump($this->checkLoginFailure("test@reak.in"));
     }
 
 }
