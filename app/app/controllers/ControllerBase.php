@@ -40,14 +40,14 @@ class ControllerBase extends Controller
         
         $acl = $this->defineAcl();
         
-        if (!((in_array($controller."/".$action,$acl[$type]))||(in_array($controller."/*",$acl[$type])))) {
-            $this->dispatcher->forward(
-                [
-                    "controller" => "utility",
-                    "action"     => "forbidden",
-                ]
-            );
-        }
+        // if (!((in_array($controller."/".$action,$acl[$type]))||(in_array($controller."/*",$acl[$type])))) {
+        //     $this->dispatcher->forward(
+        //         [
+        //             "controller" => "utility",
+        //             "action"     => "forbidden",
+        //         ]
+        //     );
+        // }
         
     }
 }

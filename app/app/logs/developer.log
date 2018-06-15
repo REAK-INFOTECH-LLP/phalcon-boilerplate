@@ -6,3 +6,183 @@ Stack trace:
 #3 [internal function]: Phalcon\Dispatcher->dispatch()
 #4 /Users/ashish/PublicHTML/GIT/phalcon-boilerplate/app/public/index.php(39): Phalcon\Mvc\Application->handle()
 #5 {main}
+[Fri, 15 Jun 18 11:15:49 +0000][CRITICAL] [LOGIN] Check Login Failure Exception - PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '*) AS `sumatory` FROM `boilerplate`.`login` WHERE `login`.`email` = 'test@reak.i' at line 1 in /Users/ashish/PublicHTML/GIT/phalcon-boilerplate/app/app/controllers/AuthorizationController.php:56
+Stack trace:
+#0 [internal function]: PDOStatement->execute()
+#1 [internal function]: Phalcon\Db\Adapter\Pdo->executePrepared(Object(PDOStatement), Array, NULL)
+#2 [internal function]: Phalcon\Db\Adapter\Pdo->query('SELECT SUM(*) A...', Array, NULL)
+#3 [internal function]: Phalcon\Mvc\Model\Query->_executeSelect(Array, Array, NULL)
+#4 [internal function]: Phalcon\Mvc\Model\Query->execute(Array, NULL)
+#5 [internal function]: Phalcon\Mvc\Model::_groupResult('SUM', 'sumatory', Array)
+#6 /Users/ashish/PublicHTML/GIT/phalcon-boilerplate/app/app/controllers/AuthorizationController.php(56): Phalcon\Mvc\Model::sum(Array)
+#7 /Users/ashish/PublicHTML/GIT/phalcon-boilerplate/app/app/controllers/AuthorizationController.php(83): AuthorizationController->checkLoginFailure('test@reak.in')
+#8 [internal function]: AuthorizationController->testAction()
+#9 [internal function]: Phalcon\Dispatcher->callActionMethod(Object(AuthorizationController), 'testAction', Array)
+#10 [internal function]: Phalcon\Dispatcher->dispatch()
+#11 /Users/ashish/PublicHTML/GIT/phalcon-boilerplate/app/public/index.php(39): Phalcon\Mvc\Application->handle()
+#12 {main}
+[Fri, 15 Jun 18 11:16:07 +0000][CRITICAL] [LOGIN] Check Login Failure Exception - PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '*) AS `sumatory` FROM `boilerplate`.`login` WHERE `login`.`email` = 'test@reak.i' at line 1 in /Users/ashish/PublicHTML/GIT/phalcon-boilerplate/app/app/controllers/AuthorizationController.php:56
+Stack trace:
+#0 [internal function]: PDOStatement->execute()
+#1 [internal function]: Phalcon\Db\Adapter\Pdo->executePrepared(Object(PDOStatement), Array, NULL)
+#2 [internal function]: Phalcon\Db\Adapter\Pdo->query('SELECT SUM(*) A...', Array, NULL)
+#3 [internal function]: Phalcon\Mvc\Model\Query->_executeSelect(Array, Array, NULL)
+#4 [internal function]: Phalcon\Mvc\Model\Query->execute(Array, NULL)
+#5 [internal function]: Phalcon\Mvc\Model::_groupResult('SUM', 'sumatory', Array)
+#6 /Users/ashish/PublicHTML/GIT/phalcon-boilerplate/app/app/controllers/AuthorizationController.php(56): Phalcon\Mvc\Model::sum(Array)
+#7 /Users/ashish/PublicHTML/GIT/phalcon-boilerplate/app/app/controllers/AuthorizationController.php(81): AuthorizationController->checkLoginFailure('test@reak.in')
+#8 [internal function]: AuthorizationController->testAction()
+#9 [internal function]: Phalcon\Dispatcher->callActionMethod(Object(AuthorizationController), 'testAction', Array)
+#10 [internal function]: Phalcon\Dispatcher->dispatch()
+#11 /Users/ashish/PublicHTML/GIT/phalcon-boilerplate/app/public/index.php(39): Phalcon\Mvc\Application->handle()
+#12 {main}
+[Fri, 15 Jun 18 11:16:10 +0000][CRITICAL] [LOGIN] Check Login Failure Exception - PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '*) AS `sumatory` FROM `boilerplate`.`login` WHERE `login`.`email` = 'test@reak.i' at line 1 in /Users/ashish/PublicHTML/GIT/phalcon-boilerplate/app/app/controllers/AuthorizationController.php:56
+Stack trace:
+#0 [internal function]: PDOStatement->execute()
+#1 [internal function]: Phalcon\Db\Adapter\Pdo->executePrepared(Object(PDOStatement), Array, NULL)
+#2 [internal function]: Phalcon\Db\Adapter\Pdo->query('SELECT SUM(*) A...', Array, NULL)
+#3 [internal function]: Phalcon\Mvc\Model\Query->_executeSelect(Array, Array, NULL)
+#4 [internal function]: Phalcon\Mvc\Model\Query->execute(Array, NULL)
+#5 [internal function]: Phalcon\Mvc\Model::_groupResult('SUM', 'sumatory', Array)
+#6 /Users/ashish/PublicHTML/GIT/phalcon-boilerplate/app/app/controllers/AuthorizationController.php(56): Phalcon\Mvc\Model::sum(Array)
+#7 /Users/ashish/PublicHTML/GIT/phalcon-boilerplate/app/app/controllers/AuthorizationController.php(81): AuthorizationController->checkLoginFailure('test@reak.in')
+#8 [internal function]: AuthorizationController->testAction()
+#9 [internal function]: Phalcon\Dispatcher->callActionMethod(Object(AuthorizationController), 'testAction', Array)
+#10 [internal function]: Phalcon\Dispatcher->dispatch()
+#11 /Users/ashish/PublicHTML/GIT/phalcon-boilerplate/app/public/index.php(39): Phalcon\Mvc\Application->handle()
+#12 {main}
+[Fri, 15 Jun 18 11:16:10 +0000][CRITICAL] [LOGIN] Check Login Failure Exception - PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '*) AS `sumatory` FROM `boilerplate`.`login` WHERE `login`.`email` = 'test@reak.i' at line 1 in /Users/ashish/PublicHTML/GIT/phalcon-boilerplate/app/app/controllers/AuthorizationController.php:56
+Stack trace:
+#0 [internal function]: PDOStatement->execute()
+#1 [internal function]: Phalcon\Db\Adapter\Pdo->executePrepared(Object(PDOStatement), Array, NULL)
+#2 [internal function]: Phalcon\Db\Adapter\Pdo->query('SELECT SUM(*) A...', Array, NULL)
+#3 [internal function]: Phalcon\Mvc\Model\Query->_executeSelect(Array, Array, NULL)
+#4 [internal function]: Phalcon\Mvc\Model\Query->execute(Array, NULL)
+#5 [internal function]: Phalcon\Mvc\Model::_groupResult('SUM', 'sumatory', Array)
+#6 /Users/ashish/PublicHTML/GIT/phalcon-boilerplate/app/app/controllers/AuthorizationController.php(56): Phalcon\Mvc\Model::sum(Array)
+#7 /Users/ashish/PublicHTML/GIT/phalcon-boilerplate/app/app/controllers/AuthorizationController.php(81): AuthorizationController->checkLoginFailure('test@reak.in')
+#8 [internal function]: AuthorizationController->testAction()
+#9 [internal function]: Phalcon\Dispatcher->callActionMethod(Object(AuthorizationController), 'testAction', Array)
+#10 [internal function]: Phalcon\Dispatcher->dispatch()
+#11 /Users/ashish/PublicHTML/GIT/phalcon-boilerplate/app/public/index.php(39): Phalcon\Mvc\Application->handle()
+#12 {main}
+[Fri, 15 Jun 18 11:16:11 +0000][CRITICAL] [LOGIN] Check Login Failure Exception - PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '*) AS `sumatory` FROM `boilerplate`.`login` WHERE `login`.`email` = 'test@reak.i' at line 1 in /Users/ashish/PublicHTML/GIT/phalcon-boilerplate/app/app/controllers/AuthorizationController.php:56
+Stack trace:
+#0 [internal function]: PDOStatement->execute()
+#1 [internal function]: Phalcon\Db\Adapter\Pdo->executePrepared(Object(PDOStatement), Array, NULL)
+#2 [internal function]: Phalcon\Db\Adapter\Pdo->query('SELECT SUM(*) A...', Array, NULL)
+#3 [internal function]: Phalcon\Mvc\Model\Query->_executeSelect(Array, Array, NULL)
+#4 [internal function]: Phalcon\Mvc\Model\Query->execute(Array, NULL)
+#5 [internal function]: Phalcon\Mvc\Model::_groupResult('SUM', 'sumatory', Array)
+#6 /Users/ashish/PublicHTML/GIT/phalcon-boilerplate/app/app/controllers/AuthorizationController.php(56): Phalcon\Mvc\Model::sum(Array)
+#7 /Users/ashish/PublicHTML/GIT/phalcon-boilerplate/app/app/controllers/AuthorizationController.php(81): AuthorizationController->checkLoginFailure('test@reak.in')
+#8 [internal function]: AuthorizationController->testAction()
+#9 [internal function]: Phalcon\Dispatcher->callActionMethod(Object(AuthorizationController), 'testAction', Array)
+#10 [internal function]: Phalcon\Dispatcher->dispatch()
+#11 /Users/ashish/PublicHTML/GIT/phalcon-boilerplate/app/public/index.php(39): Phalcon\Mvc\Application->handle()
+#12 {main}
+[Fri, 15 Jun 18 11:16:11 +0000][CRITICAL] [LOGIN] Check Login Failure Exception - PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '*) AS `sumatory` FROM `boilerplate`.`login` WHERE `login`.`email` = 'test@reak.i' at line 1 in /Users/ashish/PublicHTML/GIT/phalcon-boilerplate/app/app/controllers/AuthorizationController.php:56
+Stack trace:
+#0 [internal function]: PDOStatement->execute()
+#1 [internal function]: Phalcon\Db\Adapter\Pdo->executePrepared(Object(PDOStatement), Array, NULL)
+#2 [internal function]: Phalcon\Db\Adapter\Pdo->query('SELECT SUM(*) A...', Array, NULL)
+#3 [internal function]: Phalcon\Mvc\Model\Query->_executeSelect(Array, Array, NULL)
+#4 [internal function]: Phalcon\Mvc\Model\Query->execute(Array, NULL)
+#5 [internal function]: Phalcon\Mvc\Model::_groupResult('SUM', 'sumatory', Array)
+#6 /Users/ashish/PublicHTML/GIT/phalcon-boilerplate/app/app/controllers/AuthorizationController.php(56): Phalcon\Mvc\Model::sum(Array)
+#7 /Users/ashish/PublicHTML/GIT/phalcon-boilerplate/app/app/controllers/AuthorizationController.php(81): AuthorizationController->checkLoginFailure('test@reak.in')
+#8 [internal function]: AuthorizationController->testAction()
+#9 [internal function]: Phalcon\Dispatcher->callActionMethod(Object(AuthorizationController), 'testAction', Array)
+#10 [internal function]: Phalcon\Dispatcher->dispatch()
+#11 /Users/ashish/PublicHTML/GIT/phalcon-boilerplate/app/public/index.php(39): Phalcon\Mvc\Application->handle()
+#12 {main}
+[Fri, 15 Jun 18 11:16:12 +0000][CRITICAL] [LOGIN] Check Login Failure Exception - PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '*) AS `sumatory` FROM `boilerplate`.`login` WHERE `login`.`email` = 'test@reak.i' at line 1 in /Users/ashish/PublicHTML/GIT/phalcon-boilerplate/app/app/controllers/AuthorizationController.php:56
+Stack trace:
+#0 [internal function]: PDOStatement->execute()
+#1 [internal function]: Phalcon\Db\Adapter\Pdo->executePrepared(Object(PDOStatement), Array, NULL)
+#2 [internal function]: Phalcon\Db\Adapter\Pdo->query('SELECT SUM(*) A...', Array, NULL)
+#3 [internal function]: Phalcon\Mvc\Model\Query->_executeSelect(Array, Array, NULL)
+#4 [internal function]: Phalcon\Mvc\Model\Query->execute(Array, NULL)
+#5 [internal function]: Phalcon\Mvc\Model::_groupResult('SUM', 'sumatory', Array)
+#6 /Users/ashish/PublicHTML/GIT/phalcon-boilerplate/app/app/controllers/AuthorizationController.php(56): Phalcon\Mvc\Model::sum(Array)
+#7 /Users/ashish/PublicHTML/GIT/phalcon-boilerplate/app/app/controllers/AuthorizationController.php(81): AuthorizationController->checkLoginFailure('test@reak.in')
+#8 [internal function]: AuthorizationController->testAction()
+#9 [internal function]: Phalcon\Dispatcher->callActionMethod(Object(AuthorizationController), 'testAction', Array)
+#10 [internal function]: Phalcon\Dispatcher->dispatch()
+#11 /Users/ashish/PublicHTML/GIT/phalcon-boilerplate/app/public/index.php(39): Phalcon\Mvc\Application->handle()
+#12 {main}
+[Fri, 15 Jun 18 11:17:42 +0000][CRITICAL] [LOGIN] Check Login Failure Exception - PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '*) AS `sumatory` FROM `boilerplate`.`login` WHERE `login`.`email` = 'test@reak.i' at line 1 in /Users/ashish/PublicHTML/GIT/phalcon-boilerplate/app/app/controllers/AuthorizationController.php:56
+Stack trace:
+#0 [internal function]: PDOStatement->execute()
+#1 [internal function]: Phalcon\Db\Adapter\Pdo->executePrepared(Object(PDOStatement), Array, NULL)
+#2 [internal function]: Phalcon\Db\Adapter\Pdo->query('SELECT SUM(*) A...', Array, NULL)
+#3 [internal function]: Phalcon\Mvc\Model\Query->_executeSelect(Array, Array, NULL)
+#4 [internal function]: Phalcon\Mvc\Model\Query->execute(Array, NULL)
+#5 [internal function]: Phalcon\Mvc\Model::_groupResult('SUM', 'sumatory', Array)
+#6 /Users/ashish/PublicHTML/GIT/phalcon-boilerplate/app/app/controllers/AuthorizationController.php(56): Phalcon\Mvc\Model::sum(Array)
+#7 /Users/ashish/PublicHTML/GIT/phalcon-boilerplate/app/app/controllers/AuthorizationController.php(82): AuthorizationController->checkLoginFailure('test@reak.in')
+#8 [internal function]: AuthorizationController->testAction()
+#9 [internal function]: Phalcon\Dispatcher->callActionMethod(Object(AuthorizationController), 'testAction', Array)
+#10 [internal function]: Phalcon\Dispatcher->dispatch()
+#11 /Users/ashish/PublicHTML/GIT/phalcon-boilerplate/app/public/index.php(39): Phalcon\Mvc\Application->handle()
+#12 {main}
+[Fri, 15 Jun 18 11:17:44 +0000][CRITICAL] [LOGIN] Check Login Failure Exception - PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '*) AS `sumatory` FROM `boilerplate`.`login` WHERE `login`.`email` = 'test@reak.i' at line 1 in /Users/ashish/PublicHTML/GIT/phalcon-boilerplate/app/app/controllers/AuthorizationController.php:56
+Stack trace:
+#0 [internal function]: PDOStatement->execute()
+#1 [internal function]: Phalcon\Db\Adapter\Pdo->executePrepared(Object(PDOStatement), Array, NULL)
+#2 [internal function]: Phalcon\Db\Adapter\Pdo->query('SELECT SUM(*) A...', Array, NULL)
+#3 [internal function]: Phalcon\Mvc\Model\Query->_executeSelect(Array, Array, NULL)
+#4 [internal function]: Phalcon\Mvc\Model\Query->execute(Array, NULL)
+#5 [internal function]: Phalcon\Mvc\Model::_groupResult('SUM', 'sumatory', Array)
+#6 /Users/ashish/PublicHTML/GIT/phalcon-boilerplate/app/app/controllers/AuthorizationController.php(56): Phalcon\Mvc\Model::sum(Array)
+#7 /Users/ashish/PublicHTML/GIT/phalcon-boilerplate/app/app/controllers/AuthorizationController.php(82): AuthorizationController->checkLoginFailure('test@reak.in')
+#8 [internal function]: AuthorizationController->testAction()
+#9 [internal function]: Phalcon\Dispatcher->callActionMethod(Object(AuthorizationController), 'testAction', Array)
+#10 [internal function]: Phalcon\Dispatcher->dispatch()
+#11 /Users/ashish/PublicHTML/GIT/phalcon-boilerplate/app/public/index.php(39): Phalcon\Mvc\Application->handle()
+#12 {main}
+[Fri, 15 Jun 18 11:17:44 +0000][CRITICAL] [LOGIN] Check Login Failure Exception - PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '*) AS `sumatory` FROM `boilerplate`.`login` WHERE `login`.`email` = 'test@reak.i' at line 1 in /Users/ashish/PublicHTML/GIT/phalcon-boilerplate/app/app/controllers/AuthorizationController.php:56
+Stack trace:
+#0 [internal function]: PDOStatement->execute()
+#1 [internal function]: Phalcon\Db\Adapter\Pdo->executePrepared(Object(PDOStatement), Array, NULL)
+#2 [internal function]: Phalcon\Db\Adapter\Pdo->query('SELECT SUM(*) A...', Array, NULL)
+#3 [internal function]: Phalcon\Mvc\Model\Query->_executeSelect(Array, Array, NULL)
+#4 [internal function]: Phalcon\Mvc\Model\Query->execute(Array, NULL)
+#5 [internal function]: Phalcon\Mvc\Model::_groupResult('SUM', 'sumatory', Array)
+#6 /Users/ashish/PublicHTML/GIT/phalcon-boilerplate/app/app/controllers/AuthorizationController.php(56): Phalcon\Mvc\Model::sum(Array)
+#7 /Users/ashish/PublicHTML/GIT/phalcon-boilerplate/app/app/controllers/AuthorizationController.php(82): AuthorizationController->checkLoginFailure('test@reak.in')
+#8 [internal function]: AuthorizationController->testAction()
+#9 [internal function]: Phalcon\Dispatcher->callActionMethod(Object(AuthorizationController), 'testAction', Array)
+#10 [internal function]: Phalcon\Dispatcher->dispatch()
+#11 /Users/ashish/PublicHTML/GIT/phalcon-boilerplate/app/public/index.php(39): Phalcon\Mvc\Application->handle()
+#12 {main}
+[Fri, 15 Jun 18 11:17:45 +0000][CRITICAL] [LOGIN] Check Login Failure Exception - PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '*) AS `sumatory` FROM `boilerplate`.`login` WHERE `login`.`email` = 'test@reak.i' at line 1 in /Users/ashish/PublicHTML/GIT/phalcon-boilerplate/app/app/controllers/AuthorizationController.php:56
+Stack trace:
+#0 [internal function]: PDOStatement->execute()
+#1 [internal function]: Phalcon\Db\Adapter\Pdo->executePrepared(Object(PDOStatement), Array, NULL)
+#2 [internal function]: Phalcon\Db\Adapter\Pdo->query('SELECT SUM(*) A...', Array, NULL)
+#3 [internal function]: Phalcon\Mvc\Model\Query->_executeSelect(Array, Array, NULL)
+#4 [internal function]: Phalcon\Mvc\Model\Query->execute(Array, NULL)
+#5 [internal function]: Phalcon\Mvc\Model::_groupResult('SUM', 'sumatory', Array)
+#6 /Users/ashish/PublicHTML/GIT/phalcon-boilerplate/app/app/controllers/AuthorizationController.php(56): Phalcon\Mvc\Model::sum(Array)
+#7 /Users/ashish/PublicHTML/GIT/phalcon-boilerplate/app/app/controllers/AuthorizationController.php(82): AuthorizationController->checkLoginFailure('test@reak.in')
+#8 [internal function]: AuthorizationController->testAction()
+#9 [internal function]: Phalcon\Dispatcher->callActionMethod(Object(AuthorizationController), 'testAction', Array)
+#10 [internal function]: Phalcon\Dispatcher->dispatch()
+#11 /Users/ashish/PublicHTML/GIT/phalcon-boilerplate/app/public/index.php(39): Phalcon\Mvc\Application->handle()
+#12 {main}
+[Fri, 15 Jun 18 11:17:45 +0000][CRITICAL] [LOGIN] Check Login Failure Exception - PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '*) AS `sumatory` FROM `boilerplate`.`login` WHERE `login`.`email` = 'test@reak.i' at line 1 in /Users/ashish/PublicHTML/GIT/phalcon-boilerplate/app/app/controllers/AuthorizationController.php:56
+Stack trace:
+#0 [internal function]: PDOStatement->execute()
+#1 [internal function]: Phalcon\Db\Adapter\Pdo->executePrepared(Object(PDOStatement), Array, NULL)
+#2 [internal function]: Phalcon\Db\Adapter\Pdo->query('SELECT SUM(*) A...', Array, NULL)
+#3 [internal function]: Phalcon\Mvc\Model\Query->_executeSelect(Array, Array, NULL)
+#4 [internal function]: Phalcon\Mvc\Model\Query->execute(Array, NULL)
+#5 [internal function]: Phalcon\Mvc\Model::_groupResult('SUM', 'sumatory', Array)
+#6 /Users/ashish/PublicHTML/GIT/phalcon-boilerplate/app/app/controllers/AuthorizationController.php(56): Phalcon\Mvc\Model::sum(Array)
+#7 /Users/ashish/PublicHTML/GIT/phalcon-boilerplate/app/app/controllers/AuthorizationController.php(82): AuthorizationController->checkLoginFailure('test@reak.in')
+#8 [internal function]: AuthorizationController->testAction()
+#9 [internal function]: Phalcon\Dispatcher->callActionMethod(Object(AuthorizationController), 'testAction', Array)
+#10 [internal function]: Phalcon\Dispatcher->dispatch()
+#11 /Users/ashish/PublicHTML/GIT/phalcon-boilerplate/app/public/index.php(39): Phalcon\Mvc\Application->handle()
+#12 {main}
