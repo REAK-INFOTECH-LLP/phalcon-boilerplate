@@ -114,6 +114,8 @@ class AuthorizationController extends \Phalcon\Mvc\Controller
                     $utility = new UtilityController;
                     if($utility->sendEmail($dbEmail,"No-Reply","Password Reset Link","Please reset your password here")){
                         // Password successfully sent
+                        $this->view->disable();
+                        echo "email=test@reak.in&secret=".$forgetPassword->secret;
                     }
                     else {
                         $this->flash->error("Password Reset Email couldn't be sent at the moment, Please try again !");
