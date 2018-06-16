@@ -9,11 +9,11 @@
                 <p class="card-text">
                     <div class="form-group">
                         <label for=""></label>
-                        <input type="email" class="form-control" name="Email" id="Email" placeholder="Email">
+                        <input type="email" class="form-control" name="email" id="Email" placeholder="Email">
                     </div>
                     <div class="form-group">
                         <label for=""></label>
-                        <input type="text" class="form-control" name="Password" id="Password"  placeholder="Password">
+                        <input type="password" class="form-control" name="password" id="Password"  placeholder="Password">
 
                     </div>
                 </p>
@@ -21,7 +21,7 @@
                 <div class="row">
                     <div class="col-md-4"></div>
                     <div class="col-md-4 text-center">
-                        <button type="button" class="btn btn-outline-success" onclick="return Validate()">Submit</button>
+                        <button type="button" class="btn btn-outline-success">Submit</button>
                     </div>
                     <div class="col-md-4"></div>
                 </div>
@@ -43,13 +43,3 @@
     <div class="col-md-4"></div>
 </div>
 </div>
-<script type="text/javascript">
-
-    var password = document.getElementById("Email").value;
-    var confirmPassword = document.getElementById("Password").value;
-    if (Email != Password) {
-        alert("Passwords do not match.");
-        return false;
-    }
-    return true;
-</script>
