@@ -11,12 +11,12 @@
                     <form action="" method="post">
                         <div class="form-group">
                             <label for=""></label>
-                            <input type="password" class="form-control" name="" id="new_password" aria-describedby="emailHelpId" placeholder="New Password">
+                            <input type="password" class="form-control" name="password" id="new_password" aria-describedby="emailHelpId" placeholder="New Password">
 
                         </div>
                         <div class="form-group">
                             <label for=""></label>
-                            <input type="password" class="form-control" name="" id="confirm_password" onkeyup="validate()" placeholder="Confirm Password">
+                            <input type="password" class="form-control" name="confirm-password" id="confirm_password" onkeyup="validate()" placeholder="Confirm Password">
                         </div>
                 </p>
                 <div class="col-md-4"></div>

@@ -24,8 +24,12 @@ return new \Phalcon\Config([
         'baseUri'        => '/GIT/phalcon-boilerplate/app/',
     ],
     'metadata'  =>  [
+        'appUrl'    =>  'http://localhost/GIT/phalcon-boilerplate/app/',
         'fileUploadPath'    =>  '/var/www/html/public/upload',
         'loginFailureLimit' =>  25, // Max threshold values of failed login in [loginFailureTimeLimit] to disable user authentication entirely
         'loginFailureTimeLimit' =>  30, // Time value for failed login threshold (in minutes)
+        'sendGridAPIKey'    =>  '',
+        'fromEmail' =>  'no-reply@reak.in',
+        'fromName'  =>  'REAK INFOTECH LLP'
     ]
 ]);
