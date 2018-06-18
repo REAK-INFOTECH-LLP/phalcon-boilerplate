@@ -26,6 +26,6 @@ return new \Phalcon\Config([
     'metadata'  =>  [
         'fileUploadPath'    =>  '/var/www/html/public/upload',
         'loginFailureLimit' =>  25, // Max threshold values of failed login in [loginFailureTimeLimit] to disable user authentication entirely
-        'loginFailureTimeLimit' =>  30, // Time value for failed login threshold
+        'loginFailureTimeLimit' =>  30, // Time value for failed login threshold (in minutes)
     ]
 ]);
