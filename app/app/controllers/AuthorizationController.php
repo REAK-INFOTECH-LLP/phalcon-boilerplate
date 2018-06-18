@@ -181,24 +181,6 @@ class AuthorizationController extends ControllerBase
     public function logoutAction()
     {
         $this->session->destroy();
-    }
-
-    public function testAction()
-    {
-        $this->view->disable();
-        $utility = new UtilityController;
-        /*$utility->sendEmail("saxena.ashish005@gmail.com","Ashish Saxena","Reset your password",$body);*/
-        $body = file_get_contents(APP_PATH . "/views/emails/email.volt");
-        $firstName = "Ashish";
-        $lastName = "Saxena";
-        $replaceParams = array(
-            "{{firstName}}" => $firstName,
-            "{{lastName}}" => $lastName,
-            "{{appUrl}}" => $this->config->metadata->appUrl,
-            "{{resetPassParams}}" => "email=test@reak.in&secret=123",
-            "{{fromName}}" => $this->config->metadata->fromName,
-        );
-        $body = strtr($body, $replaceParams);
-        print_r($body);
+        $this->response->redirect("authorization/login");
     }
 }
