@@ -19,10 +19,7 @@ class AuthorizationController extends ControllerBase
                         // Successfully Authenticated - Redirect on Dashboard / Visiting Page
                         $this->session->set("type",$foundUser[0]->type);
                         $this->session->set("id",$foundUser[0]->id);
-                        $this->dispatcher->forward([
-                            "controller"    =>  "index",
-                            "action" =>  "dashboard"
-                        ]);
+                        $this->response->redirect("index/dashboard");
                     }
                     else {
                         $this->flash->error("Incorrect Credentials");

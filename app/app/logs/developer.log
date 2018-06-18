@@ -194,3 +194,11 @@ Stack trace:
 #3 [internal function]: Phalcon\Dispatcher->dispatch()
 #4 /Users/ashish/PublicHTML/GIT/phalcon-boilerplate/app/public/index.php(39): Phalcon\Mvc\Application->handle()
 #5 {main}
+[Mon, 18 Jun 18 11:12:03 +0000][CRITICAL] [LOGIN] Login Exception - Phalcon\Mvc\Model\Exception: The index does not exist in the cursor in phalcon/mvc/model/resultset.zep:300
+Stack trace:
+#0 /Users/ashish/PublicHTML/GIT/phalcon-boilerplate/app/app/controllers/AuthorizationController.php(18): Phalcon\Mvc\Model\Resultset->offsetGet(0)
+#1 [internal function]: AuthorizationController->loginAction()
+#2 [internal function]: Phalcon\Dispatcher->callActionMethod(Object(AuthorizationController), 'loginAction', Array)
+#3 [internal function]: Phalcon\Dispatcher->dispatch()
+#4 /Users/ashish/PublicHTML/GIT/phalcon-boilerplate/app/public/index.php(39): Phalcon\Mvc\Application->handle()
+#5 {main}

@@ -21,10 +21,9 @@ return new \Phalcon\Config([
         'pluginsDir'     => APP_PATH . '/plugins/',
         'libraryDir'     => APP_PATH . '/library/',
         'cacheDir'       => BASE_PATH . '/cache/',
-        'baseUri'        => '/app/',
+        'baseUri'        => '/GIT/phalcon-boilerplate/app/',
     ],
     'metadata'  =>  [
-        'appUrl'    =>  'http://localhost/GIT/phalcon-boilerplate/app/',
         'fileUploadPath'    =>  '/var/www/html/public/upload'
     ]
 ]);

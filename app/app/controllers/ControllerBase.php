@@ -6,7 +6,7 @@ use Phalcon\Mvc\Dispatcher;
 class ControllerBase extends Controller
 {
     public function initialize(){
-        $this->view->appUrl = $this->config->metadata->appUrl;
+        $this->view->appUrl = $this->config->application->baseUri;
     }
     
     public function beforeExecuteRoute(Dispatcher $dispatcher) {
