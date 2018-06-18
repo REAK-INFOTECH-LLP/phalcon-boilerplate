@@ -49,6 +49,5 @@
         } else {
             document.getElementById('error').innerHTML = "matched"
         }
-        return;
     }
 </script>
