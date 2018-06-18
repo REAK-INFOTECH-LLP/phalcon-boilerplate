@@ -63,7 +63,7 @@ class AuthorizationController extends ControllerBase
                 ]
             ]);
             // Static value of 25 for failed login threshold
-            return ($checkLogin<25)?true:false;
+            return ($checkLogin < $this->config->metadata->loginFailureLimit)?true:false;
         }
         catch(\Exception $e){
             $this->logger->critical('[LOGIN] Check Login Failure Exception - '.$e);

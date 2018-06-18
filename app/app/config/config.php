@@ -24,6 +24,8 @@ return new \Phalcon\Config([
         'baseUri'        => '/GIT/phalcon-boilerplate/app/',
     ],
     'metadata'  =>  [
-        'fileUploadPath'    =>  '/var/www/html/public/upload'
+        'fileUploadPath'    =>  '/var/www/html/public/upload',
+        'loginFailureLimit' =>  25,
+        
     ]
 ]);
