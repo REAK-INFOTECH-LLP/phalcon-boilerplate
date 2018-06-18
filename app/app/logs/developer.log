@@ -186,3 +186,11 @@ Stack trace:
 #10 [internal function]: Phalcon\Dispatcher->dispatch()
 #11 /Users/ashish/PublicHTML/GIT/phalcon-boilerplate/app/public/index.php(39): Phalcon\Mvc\Application->handle()
 #12 {main}
+[Mon, 18 Jun 18 10:49:28 +0000][ERROR] [LOGIN] Forget Password - Phalcon\Mvc\Model\Exception: The index does not exist in the cursor in phalcon/mvc/model/resultset.zep:300
+Stack trace:
+#0 /Users/ashish/PublicHTML/GIT/phalcon-boilerplate/app/app/controllers/AuthorizationController.php(111): Phalcon\Mvc\Model\Resultset->offsetGet(0)
+#1 [internal function]: AuthorizationController->forgotPasswordAction()
+#2 [internal function]: Phalcon\Dispatcher->callActionMethod(Object(AuthorizationController), 'forgotPasswordA...', Array)
+#3 [internal function]: Phalcon\Dispatcher->dispatch()
+#4 /Users/ashish/PublicHTML/GIT/phalcon-boilerplate/app/public/index.php(39): Phalcon\Mvc\Application->handle()
+#5 {main}

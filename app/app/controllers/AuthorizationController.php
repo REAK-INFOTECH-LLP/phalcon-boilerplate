@@ -1,6 +1,6 @@
 <?php
 
-class AuthorizationController extends \Phalcon\Mvc\Controller
+class AuthorizationController extends ControllerBase
 {
 
     public function loginAction(){
@@ -26,7 +26,7 @@ class AuthorizationController extends \Phalcon\Mvc\Controller
                     }
                     else {
                         $this->flash->error("Incorrect Credentials");
-                        logLoginFailure(array($this->request->getPost("email"),strtotime("now")));
+                        $this->logLoginFailure(array($this->request->getPost("email"),strtotime("now")));
                     }
                 }
                 else {
@@ -46,6 +46,9 @@ class AuthorizationController extends \Phalcon\Mvc\Controller
             $failureAttempts = new Login;
             $failureAttempts->email = $account[0];
             $failureAttempts->timestamp = $account[1];
+            if(!$failureAttempts->create()){
+                $this->logger->critical('[LOGIN] Login Failure DB didnt SAVE');
+            }
         }
         catch(\Exception $e){
             $this->logger->critical('[LOGIN] Login Failure Exception - '.$e);
