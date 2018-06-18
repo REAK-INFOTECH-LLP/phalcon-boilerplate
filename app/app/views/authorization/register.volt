@@ -16,17 +16,16 @@
                 <h4 class="card-header text-center">Registration Form<h4>
                 <div class="card-body">
                     <div class="form-group ">
-                        <input type="text" class="form-control" id="usr" placeholder="Email">
+                        <input type="text" class="form-control" name="email" id="usr" placeholder="Email">
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" id="pwd" placeholder="Password">
+                        <input type="password" class="form-control" name="password" id="pwd" placeholder="Password">
                     </div>
                     <div class="form-group">
-                        <select name="" class="form-control" id="">
-                                <option value="">---Select---</option>
-                            <option value="">Guest</option>
-                            <option value="">User</option>
-                            <option value="">Admin</option>
+                        <select name="type" class="form-control" id="">
+                            <option value="guest">Guest</option>
+                            <option value="user">User</option>
+                            <option value="admin">Admin</option>
                         </select>
                     </div>
 
