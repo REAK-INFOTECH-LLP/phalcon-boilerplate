@@ -53,8 +53,6 @@
     function validateEmail() {
         var email = document.getElementById("email").value;
         var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/; // regex is a combination of special character and formate used for email validation(An email address has a format of type : An @ sign , a dot between address and domian and At least six characters)
-        if (reg.test(email.value) == false) 
-        
-        
+        if (reg.test(email.value) == false)       
 }
 </script>
