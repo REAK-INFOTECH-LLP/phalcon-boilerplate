@@ -54,7 +54,7 @@ class AuthorizationController extends ControllerBase
 
     private function checkLoginFailure($email){
         try{
-            $checkTimestamp = strtotime("-30 minutes", strtotime("now"));
+            $checkTimestamp = strtotime("-".$this->config->metadata->loginFailureTimeLimit." minutes", strtotime("now"));
             $checkLogin = Login::count([
                 "conditions"    =>  "email = ?1 and timestamp > ?2",
                 "bind"  =>  [
@@ -62,7 +62,7 @@ class AuthorizationController extends ControllerBase
                     2   =>  $checkTimestamp
                 ]
             ]);
-            // Static value of 25 for failed login threshold
+            // Dynamic value for failed login threshold
             return ($checkLogin < $this->config->metadata->loginFailureLimit)?true:false;
         }
         catch(\Exception $e){
