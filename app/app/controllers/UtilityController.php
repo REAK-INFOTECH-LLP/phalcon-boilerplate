@@ -5,7 +5,7 @@ class UtilityController extends ControllerBase
 
     public function indexAction()
     {
-
+   
     }
 
     public function forbiddenAction()
@@ -16,6 +16,11 @@ class UtilityController extends ControllerBase
     public function notfoundAction()
     {
 
+    }
+
+    public function unauthorizeAction()
+    {
+        echo json_encode(array("status"=>"failed","message"=>"Un Authorized User"));
     }
 
     public function sendEmail($toEmail, $toName, $subject, $body)
