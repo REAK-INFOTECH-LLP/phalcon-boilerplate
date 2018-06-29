@@ -18,11 +18,6 @@ class UtilityController extends ControllerBase
 
     }
 
-    public function unauthorizeAction()
-    {
-        echo json_encode(array("status"=>"failed","message"=>"Un Authorized User"));
-    }
-
     public function sendEmail($toEmail, $toName, $subject, $body)
     {
         // Send Email

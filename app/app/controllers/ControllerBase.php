@@ -11,13 +11,12 @@ class ControllerBase extends Controller
     
     public function beforeExecuteRoute(Dispatcher $dispatcher) {
         // Executed before every found action
-       //echo "starting work to make token verification along with session verification";
-        if($this->request->get("token")){
+         if($this->request->get("token")){
             $this->view->disable();
             $this->verifyToken($this->request->get("token"),$this->request->get("id"),$dispatcher->getControllerName(),$dispatcher->getActionName());
         }
         else{
-            //here call checkAcl function for session type checking
+            //checkAcl function for session checking
             $this->checkAcl($dispatcher->getControllerName(), $dispatcher->getActionName());
         }
     }
@@ -69,18 +68,16 @@ class ControllerBase extends Controller
         ]);
         if(sha1(($foundUser[0]->email).($foundUser[0]->password)) == $token)
         {
-            echo "verified token<br>";
-            $acl = $this->defineAcl();
-           
-
+            /** 
+             * User Verified Automatically directed to given url
+             */
+                      
         }else{
-            echo "not verified";
-            // $this->dispatcher->forward(
-            //     [
-            //         "controller" => "utility",
-            //         "action"     => "unauthorize",
-            //     ]
-            // );
+            /** 
+             * User Not Verified here 
+             * return a json with status "failure"
+             */
+            echo json_encode(array("status"=>"failure","message"=>"Un Authorized User"));
         }
     }
 }
