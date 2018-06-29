@@ -45,7 +45,7 @@ class ControllerBase extends Controller
         empty($type)?$type="guest":true;
         
         $acl = $this->defineAcl();
-        /*
+        
         if (!((in_array($controller."/".$action,$acl[$type]))||(in_array($controller."/*",$acl[$type])))) {
             $this->dispatcher->forward(
                 [
@@ -54,12 +54,11 @@ class ControllerBase extends Controller
                 ]
             );
         }
-        */
+        
     }
 
     private function verifyToken($token,$id,$controller,$action)
     {
-        //here verify token `a8c52bdb667b6a060c7ce788fa900378a48c1623`
         $foundUser = Users::find([
             "conditions" => "id = ?1",
             "bind" => [
