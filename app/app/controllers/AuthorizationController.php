@@ -18,6 +18,8 @@ class AuthorizationController extends ControllerBase
                     ]);
                     if ($foundUser[0]->password == sha1($this->request->getPost("password"))) {
                         // Successfully Authenticated - Redirect on Dashboard / Visiting Page
+                        // sessionVerify used for check user logged in or not 
+                        $this->session->set("sessionVerify", true);
                         $this->session->set("type", $foundUser[0]->type);
                         $this->session->set("id", $foundUser[0]->id);
                         $this->response->redirect("index/dashboard");
