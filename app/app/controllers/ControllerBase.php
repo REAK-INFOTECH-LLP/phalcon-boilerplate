@@ -12,6 +12,9 @@ class ControllerBase extends Controller
     public function beforeExecuteRoute(Dispatcher $dispatcher) {
         // Executed before every found action
         $this->checkAcl($dispatcher->getControllerName(), $dispatcher->getActionName());
+        $this->view->disable();
+        echo "starting work to make token verification along with session verification";
+        echo $this->request->get("token");
         
     }
     
@@ -39,7 +42,7 @@ class ControllerBase extends Controller
         empty($type)?$type="guest":true;
         
         $acl = $this->defineAcl();
-        
+        /*
         if (!((in_array($controller."/".$action,$acl[$type]))||(in_array($controller."/*",$acl[$type])))) {
             $this->dispatcher->forward(
                 [
@@ -48,6 +51,6 @@ class ControllerBase extends Controller
                 ]
             );
         }
-        
+        */
     }
 }
