@@ -11,11 +11,15 @@ class ControllerBase extends Controller
     
     public function beforeExecuteRoute(Dispatcher $dispatcher) {
         // Executed before every found action
-        $this->checkAcl($dispatcher->getControllerName(), $dispatcher->getActionName());
-        $this->view->disable();
-        echo "starting work to make token verification along with session verification";
-        echo $this->request->get("token");
-        
+       //echo "starting work to make token verification along with session verification";
+        if($this->request->get("token")){
+            $this->view->disable();
+            $this->verifyToken($this->request->get("token"),$this->request->get("id"),$dispatcher->getControllerName(),$dispatcher->getActionName());
+        }
+        else{
+            //here call checkAcl function for session type checking
+            $this->checkAcl($dispatcher->getControllerName(), $dispatcher->getActionName());
+        }
     }
     
     private function defineAcl(){
@@ -52,5 +56,31 @@ class ControllerBase extends Controller
             );
         }
         */
+    }
+
+    private function verifyToken($token,$id,$controller,$action)
+    {
+        //here verify token `a8c52bdb667b6a060c7ce788fa900378a48c1623`
+        $foundUser = Users::find([
+            "conditions" => "id = ?1",
+            "bind" => [
+                1 => $id,
+            ],
+        ]);
+        if(sha1(($foundUser[0]->email).($foundUser[0]->password)) == $token)
+        {
+            echo "verified token<br>";
+            $acl = $this->defineAcl();
+           
+
+        }else{
+            echo "not verified";
+            // $this->dispatcher->forward(
+            //     [
+            //         "controller" => "utility",
+            //         "action"     => "unauthorize",
+            //     ]
+            // );
+        }
     }
 }
