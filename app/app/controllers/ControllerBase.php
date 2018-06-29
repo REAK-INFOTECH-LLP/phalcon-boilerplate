@@ -11,8 +11,14 @@ class ControllerBase extends Controller
     
     public function beforeExecuteRoute(Dispatcher $dispatcher) {
         // Executed before every found action
-        $this->checkAcl($dispatcher->getControllerName(), $dispatcher->getActionName());
-        
+         if($this->request->get("token")){
+            $this->view->disable();
+            $this->verifyToken($this->request->get("token"),$this->request->get("id"),$dispatcher->getControllerName(),$dispatcher->getActionName());
+        }
+        else{
+            //checkAcl function for session checking
+            $this->checkAcl($dispatcher->getControllerName(), $dispatcher->getActionName());
+        }
     }
     
     private function defineAcl(){
@@ -49,5 +55,28 @@ class ControllerBase extends Controller
             );
         }
         
+    }
+
+    private function verifyToken($token,$id,$controller,$action)
+    {
+        $foundUser = Users::find([
+            "conditions" => "id = ?1",
+            "bind" => [
+                1 => $id,
+            ],
+        ]);
+        if(sha1(($foundUser[0]->email).($foundUser[0]->password)) == $token)
+        {
+            /** 
+             * User Verified Automatically directed to given url
+             */
+                      
+        }else{
+            /** 
+             * User Not Verified here 
+             * return a json with status "failure"
+             */
+            echo json_encode(array("status"=>"failure","message"=>"Un Authorized User"));
+        }
     }
 }

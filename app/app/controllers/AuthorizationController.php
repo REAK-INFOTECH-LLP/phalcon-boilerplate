@@ -5,32 +5,41 @@ class AuthorizationController extends ControllerBase
 
     public function loginAction()
     {
-        if ($this->request->isPost()) {
+       
+        if($this->session->get("sessionVerify")== 1)
+        {
+            $this->response->redirect("index/index");
+        }
+        else {
+            if ($this->request->isPost()) {
 
-            try {
-                $bruteForceCheck = $this->checkLoginFailure($this->request->getPost("email"));
-                if ($bruteForceCheck) {
-                    $foundUser = Users::find([
-                        "conditions" => "email = ?1",
-                        "bind" => [
-                            1 => $this->request->getPost("email"),
-                        ],
-                    ]);
-                    if ($foundUser[0]->password == sha1($this->request->getPost("password"))) {
-                        // Successfully Authenticated - Redirect on Dashboard / Visiting Page
-                        $this->session->set("type", $foundUser[0]->type);
-                        $this->session->set("id", $foundUser[0]->id);
-                        $this->response->redirect("index/dashboard");
+                try {
+                    $bruteForceCheck = $this->checkLoginFailure($this->request->getPost("email"));
+                    if ($bruteForceCheck) {
+                        $foundUser = Users::find([
+                            "conditions" => "email = ?1",
+                            "bind" => [
+                                1 => $this->request->getPost("email"),
+                            ],
+                        ]);
+                        if ($foundUser[0]->password == sha1($this->request->getPost("password"))) {
+                            // Successfully Authenticated - Redirect on Dashboard / Visiting Page
+                            // sessionVerify used for check user logged in or not 
+                            $this->session->set("sessionVerify", true);
+                            $this->session->set("type", $foundUser[0]->type);
+                            $this->session->set("id", $foundUser[0]->id);
+                            $this->response->redirect("index/dashboard");
+                        } else {
+                            $this->flash->error("Incorrect Credentials");
+                            $this->logLoginFailure(array($this->request->getPost("email"), strtotime("now")));
+                        }
                     } else {
-                        $this->flash->error("Incorrect Credentials");
-                        $this->logLoginFailure(array($this->request->getPost("email"), strtotime("now")));
+                        $this->flash->error("Your account is under brute force attack, and has been temporarily blocked");
                     }
-                } else {
-                    $this->flash->error("Your account is under brute force attack, and has been temporarily blocked");
+                } catch (\Exception $e) {
+                    $this->flash->error("System failure, Please contact site administrator.");
+                    $this->logger->critical('[LOGIN] Login Exception - ' . $e);
                 }
-            } catch (\Exception $e) {
-                $this->flash->error("System failure, Please contact site administrator.");
-                $this->logger->critical('[LOGIN] Login Exception - ' . $e);
             }
         }
     }
