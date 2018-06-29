@@ -153,19 +153,19 @@ Documentation
     You can call it with `$this->config->metadata->appUrl`  
     Inside view, `{{appUrl}}` can be used to get full application URL.
 
-* ### Initial Steps:
-    1) Clone The Repo
-    2) Install composer & update 
-            cmd: sudo apt-get install composer
-    3) Make a folder "cache" inside app root folder and give read-write permission
-    4) Update phalcon dev-tools by
-            cmd: git clone git://github.com/phalcon/cphalcon.git
-    5) Change db configuration in config.php file
-    6) Set migration 
+### Initial Steps:
+    * Clone The Repo
+    * Install composer & update 
+            cmd: `sudo apt-get install composer`
+    * Make a folder "cache" inside app root folder and give read-write permission
+    * Update phalcon dev-tools by
+            cmd: `git clone git://github.com/phalcon/cphalcon.git`
+    * Change db configuration in config.php file
+    * Set migration 
         Initial steps to migrate
-            cmd: phalcon migration
+        cmd: `phalcon migration`
         Run migration by 
-            cmd: phalcon migration --action=run
+        cmd: `phalcon migration --action=run`
         Generate migration by
-            cmd: phalcon migration --action=generate
+        cmd: `phalcon migration --action=generate`
         
