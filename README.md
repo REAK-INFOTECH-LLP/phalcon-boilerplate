@@ -22,16 +22,16 @@ The boilerplate provides you an easy platform to build your applications on, The
 Documentation
 =============
 
-*   ### Devtool Compatibility
+*  ###   Devtool Compatibility
     
-     This boilerplate is compatible with phalcon devtool, so you can easily create new controllers, models etc  
+    This boilerplate is compatible with phalcon devtool, so you can easily create new controllers, models etc  
     `phalcon controller demo`  
       
     \* Make sure you create .phalcon folder first in the project directory
     
-*   ### ACL Management
+*   ###   ACL Management
     
-     This project has built-in ACL management system, `ControllerBase.php::defineAcl()` has allow definitions for the user types which is driven by session.  
+    This project has built-in ACL management system, `ControllerBase.php::defineAcl()` has allow definitions for the user types which is driven by session.  
     
         
                         // Allow array
@@ -60,12 +60,12 @@ Documentation
     `ControllerBase::checkAcl()` function has the logic code on how the ACL authorizes user.  
     ACL Denied redirects the user to forbidden (403) page set in `UtilityController::forbiddenAction`
     
-*   ### Error Handling
+*   ###   Error Handling
     
-     Out of the box support 404 support  
-     404 error is defined in `config/services.php`  
+    Out of the box support 404 support  
+    404 error is defined in `config/services.php`  
       
-     404 handler is at UtilityController::notfoundAction, Templates or other logging actions can be performed there.
+    404 handler is at UtilityController::notfoundAction, Templates or other logging actions can be performed there.
     
         
                         $di->setShared(
