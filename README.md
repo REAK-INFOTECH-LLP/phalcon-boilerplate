@@ -24,14 +24,14 @@ Documentation
 
 *   ### Devtool Compatibility
     
-    This boilerplate is compatible with phalcon devtool, so you can easily create new controllers, models etc  
+     This boilerplate is compatible with phalcon devtool, so you can easily create new controllers, models etc  
     `phalcon controller demo`  
       
     \* Make sure you create .phalcon folder first in the project directory
     
 *   ### ACL Management
     
-    This project has built-in ACL management system, `ControllerBase.php::defineAcl()` has allow definitions for the user types which is driven by session.  
+     This project has built-in ACL management system, `ControllerBase.php::defineAcl()` has allow definitions for the user types which is driven by session.  
     
         
                         // Allow array
@@ -62,10 +62,10 @@ Documentation
     
 *   ### Error Handling
     
-    Out of the box support 404 support  
-    404 error is defined in `config/services.php`  
+     Out of the box support 404 support  
+     404 error is defined in `config/services.php`  
       
-    404 handler is at UtilityController::notfoundAction, Templates or other logging actions can be performed there.
+     404 handler is at UtilityController::notfoundAction, Templates or other logging actions can be performed there.
     
         
                         $di->setShared(
