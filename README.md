@@ -22,7 +22,7 @@ The boilerplate provides you an easy platform to build your applications on, The
 Documentation
 =============
 
-*   Devtool Compatibility
+*   ### Devtool Compatibility
     
     This boilerplate is compatible with phalcon devtool, so you can easily create new controllers, models etc  
     `phalcon controller demo`  
