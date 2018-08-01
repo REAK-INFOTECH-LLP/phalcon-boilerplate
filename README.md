@@ -22,13 +22,15 @@ The boilerplate provides you an easy platform to build your applications on, The
 Documentation
 =============
 
-*  ###  Devtool Compatibility ###
+*  <h3> Devtool Compatibility </h3> 
+    
     This boilerplate is compatible with phalcon devtool, so you can easily create new controllers, models etc  
     `phalcon controller demo`  
       
     \* Make sure you create .phalcon folder first in the project directory
     
-*  ###  ACL Management ###
+*   <h3> ACL Management </h3>
+    
     This project has built-in ACL management system, `ControllerBase.php::defineAcl()` has allow definitions for the user types which is driven by session.  
     
         
@@ -58,7 +60,8 @@ Documentation
     `ControllerBase::checkAcl()` function has the logic code on how the ACL authorizes user.  
     ACL Denied redirects the user to forbidden (403) page set in `UtilityController::forbiddenAction`
     
-*  ### Error Handling ###
+*   <h3> Error Handling </h3>
+    
     Out of the box support 404 support  
     404 error is defined in `config/services.php`  
       
@@ -99,7 +102,8 @@ Documentation
                         );
                 
     
-*   ### Testing Suite ###
+*   <h3> Testing Suite </h3>
+    
     PHPUnit has been included with composer support  
     Tests are located at : `app/tests`  
       
@@ -122,7 +126,8 @@ Documentation
         Master class file which should be called in all unittests file inside controller/ , Includes setUp() instructions and DI loading.
         
     
-*   ### Composer Integration ###
+*   <h3> Composer Integration </h3>
+    
     Composer is already loaded and integrated, a test package Hello World, can be found in `composer.json`, called in `TestController::testcomposerAction`  
       
     Composer integration can be found at `app/public/index.php`  
@@ -131,7 +136,8 @@ Documentation
                         require_once(BASE_PATH . "/../vendor/autoload.php");
                 
     
-*   ### Multi-Env Support ###
+*   <h3> Multi-Env Support </h3>
+    
     This project has easy deployment configuration enabled, `app/config/system.ini`  
     Inside that file, you can set environment and appropriate file will be loaded.  
       
