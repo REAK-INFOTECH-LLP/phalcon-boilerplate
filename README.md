@@ -22,15 +22,13 @@ The boilerplate provides you an easy platform to build your applications on, The
 Documentation
 =============
 
-*  ###  Devtool Compatibility
-    
+*  ###  Devtool Compatibility ###
     This boilerplate is compatible with phalcon devtool, so you can easily create new controllers, models etc  
     `phalcon controller demo`  
       
     \* Make sure you create .phalcon folder first in the project directory
     
-*  ###  ACL Management
-
+*  ###  ACL Management ###
     This project has built-in ACL management system, `ControllerBase.php::defineAcl()` has allow definitions for the user types which is driven by session.  
     
         
@@ -60,8 +58,7 @@ Documentation
     `ControllerBase::checkAcl()` function has the logic code on how the ACL authorizes user.  
     ACL Denied redirects the user to forbidden (403) page set in `UtilityController::forbiddenAction`
     
-*  ### Error Handling
-    
+*  ### Error Handling ###
     Out of the box support 404 support  
     404 error is defined in `config/services.php`  
       
@@ -102,8 +99,7 @@ Documentation
                         );
                 
     
-*   ### Testing Suite
-    
+*   ### Testing Suite ###
     PHPUnit has been included with composer support  
     Tests are located at : `app/tests`  
       
@@ -126,8 +122,7 @@ Documentation
         Master class file which should be called in all unittests file inside controller/ , Includes setUp() instructions and DI loading.
         
     
-*   ### Composer Integration
-    
+*   ### Composer Integration ###
     Composer is already loaded and integrated, a test package Hello World, can be found in `composer.json`, called in `TestController::testcomposerAction`  
       
     Composer integration can be found at `app/public/index.php`  
@@ -136,8 +131,7 @@ Documentation
                         require_once(BASE_PATH . "/../vendor/autoload.php");
                 
     
-*   ### Multi-Env Support
-    
+*   ### Multi-Env Support ###
     This project has easy deployment configuration enabled, `app/config/system.ini`  
     Inside that file, you can set environment and appropriate file will be loaded.  
       
