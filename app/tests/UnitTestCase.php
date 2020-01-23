@@ -14,10 +14,13 @@ abstract class UnitTestCase extends PhalconTestCase
 
     public function setUp()
     {
+        global $di;
+
         parent::setUp();
 
         // Load any additional services that might be required during testing
-        $di = Di::getDefault();
+        \Phalcon\Di::setDefault($di);
+        //$di = Di::getDefault();
 
         // Get any DI components here. If you have a config, be sure to pass it to the parent
 
@@ -38,6 +41,10 @@ abstract class UnitTestCase extends PhalconTestCase
         $this->guzzle = new GuzzleHttp\Client([
             'base_uri' => $url
         ]);
+    }
+
+    public function tearDown(){
+        \Mockery::close();
     }
 
     /**
