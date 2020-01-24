@@ -37,12 +37,16 @@ class TestController extends ControllerBase
         $this->view->disable();
         if($this->request->isPost()){
             $value = $this->request->getPost("value");
-
-            $user = new \User;
-            $user->value = $value;
             
-            print_r($user->create());
-            echo "done";
+            try{
+                $user = new \User;
+                $user->value = $value;
+            
+                print_r($user->create());
+                echo "done";
+            } catch (\Exception $e){
+                return $e;
+            }
 
         } else {
             // Do Nothing

@@ -55,7 +55,7 @@ class TestControllerUnitTest extends \UnitTestCase {
     $aclMock = \Mockery::mock('overload:\User');
     $aclMock->shouldReceive('create')
         ->once()
-        ->andReturn(true);
+        ->andThrow(new \Exception("wubalubadub"));
     $testController->view = new class {
         public function disable(){
             return true;
@@ -71,6 +71,13 @@ class TestControllerUnitTest extends \UnitTestCase {
     };
     $resp = $testController->dbcheckAction();
     //print_r($resp);
+    //
+    // Making sure instead of throwing exception we get the error back
+    $this->assertEquals(
+        "wubalubadub",
+        $resp->getMessage(),
+        "Exception Handling works"
+    );
     }
 
 }
