@@ -21,10 +21,10 @@ return new \Phalcon\Config([
         'pluginsDir'     => APP_PATH . '/plugins/',
         'libraryDir'     => APP_PATH . '/library/',
         'cacheDir'       => BASE_PATH . '/cache/',
-        'baseUri'        => '/GIT/phalcon-boilerplate/app/',
+        'baseUri'        => '/',
     ],
     'metadata'  =>  [
-        'appUrl'    =>  'http://localhost/GIT/phalcon-boilerplate/app/',
+        'appUrl'    =>  'http://localhost:8000',
         'fileUploadPath'    =>  '/var/www/html/public/upload',
         'loginFailureLimit' =>  25, // Max threshold values of failed login in [loginFailureTimeLimit] to disable user authentication entirely
         'loginFailureTimeLimit' =>  30, // Time value for failed login threshold (in minutes)

@@ -1,11 +1,13 @@
 <?php
 
+use Phalcon\Escaper;
 use Phalcon\Mvc\View;
 use Phalcon\Mvc\View\Engine\Php as PhpEngine;
 use Phalcon\Mvc\Url as UrlResolver;
 use Phalcon\Mvc\View\Engine\Volt as VoltEngine;
 use Phalcon\Mvc\Model\Metadata\Memory as MetaDataAdapter;
-use Phalcon\Session\Adapter\Files as SessionAdapter;
+use Phalcon\Session\Manager as Manager;
+use Phalcon\Session\Adapter\Stream as Stream;
 use Phalcon\Flash\Session as Flash;
 use Phalcon\Dispatcher;
 use Phalcon\Mvc\Dispatcher as MvcDispatcher;
@@ -18,7 +20,7 @@ use Phalcon\Logger\Adapter\File as FileAdapter;
 /**
  * Shared configuration service
  */
- 
+
 $di->setShared('config', function () {
     $config_ini = parse_ini_file("system.ini");
     if($config_ini["environment"] == "production"){
@@ -58,8 +60,8 @@ $di->setShared('view', function () {
             $volt = new VoltEngine($view, $this);
 
             $volt->setOptions([
-                'compiledPath' => $config->application->cacheDir,
-                'compiledSeparator' => '_'
+                'path' => $config->application->cacheDir,
+                'separator' => '_'
             ]);
 
             return $volt;
@@ -98,26 +100,31 @@ $di->setShared('modelsMetadata', function () {
 });
 
 /**
- * Register the session flash service with the Twitter Bootstrap classes
- */
-$di->set('flash', function () {
-    return new Flash([
-        'error'   => 'alert alert-danger',
-        'success' => 'alert alert-success',
-        'notice'  => 'alert alert-info',
-        'warning' => 'alert alert-warning'
-    ]);
-});
-
-/**
  * Start the session the first time some component request the session service
  */
-$di->setShared('session', function () {
-    $session = new SessionAdapter();
-    $session->start();
+$session = new Manager();
+$files = new Stream([
+    'savePath' => '/tmp',
+]);
+$session->setAdapter($files);
+$session->start();
 
-    return $session;
-});
+$di->setShared('session', $session);
+
+/**
+ * Register the session flash service with the Twitter Bootstrap classes
+ */
+
+$flashCSS = [
+    'error'   => 'alert alert-danger',
+    'success' => 'alert alert-success',
+    'notice'  => 'alert alert-info',
+    'warning' => 'alert alert-warning'
+];
+
+$escaper = new Escaper;
+$flash = new Flash($escaper, $session);
+
 
 
 $di->setShared(
