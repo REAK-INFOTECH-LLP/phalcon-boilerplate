@@ -168,4 +168,5 @@ Documentation
         cmd: `phalcon migration --action=run`
         Generate migration by
         cmd: `phalcon migration --action=generate`
-        
+    * Run using built-in PHP Server
+        cmd:  php -S localhost:8000 app/.htrouter.php
